@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Kards">
+    <meta name="application-name" content="Kards">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="icons/browserconfig.xml">
+    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Trello Board</title>
+
+</head>
+
+<body>
+    <header>
+        <div class="header-flex">
+            <span id="sidebar-button" title="Open boards menu"><i class="fa-solid fa-bars"></i></span>
+            <h1 id="title">Kards</h1>
+            <div class="header-icons">
+                <i title="Delete this board" id="delete-button" class="fa-solid fa-trash"></i>
+                <i title="Save all boards" id="save-button" class="fa-solid fa-floppy-disk"></i>
+                <i title="Settings" id="settings-button" class="fa-solid fa-gear"></i>
+                <button id="logoutBtn" style="background-color: white; padding: 8px; border-radius: 4px; border: 1px solid black; cursor: pointer; ">Logout</button>
+            </div>
+
+        </div>
+    </header>
+
+    <div id="sidebar" class="sidenav">
+        <span id="sidebar-close">&times;</span>
+        <p class="is-title">Boards</p>
+        <ul id="boards-list">
+        </ul>
+
+        <div class="flex-col">
+            <input type="text" id="add-board-text" name="add-board" placeholder="Add new board...">
+            <button id="add-board-button">Create Board</button>
+        </div>
+    </div>
+
+    <div id="card-context-menu" class="context-menu">
+        <ul>
+            <li id="card-context-menu-delete"><i class="fa-solid fa-trash"></i> Delete</li>
+            <li id="card-context-menu-clear"><i class="fa-solid fa-eraser"></i> Clear</li>
+            <li id="card-context-menu-duplicate"><i class="fa-solid fa-copy"></i> Duplicate</li>
+        </ul>
+    </div>
+
+    <div class="container" id="main-container">
+        <div id="cards-container">
+
+            <div id="add-column">
+                <i class="fa-solid fa-plus"></i> Add New Column
+            </div>
+        </div>
+
+        <div id="add-card">
+            <input maxlength="128" type="text" id="add-card-text" name="add-card" placeholder="Add a new card..."
+                autofocus>
+            <button id="add-card-button">+</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script type="module" src="login.js"></script>
+</body>
+
+</html>
